@@ -8,9 +8,8 @@ import CategoriesList from './components/CategoriesList/CategoriesList';
 const App = () => {
   const location = useLocation();
   const HomePage = location.pathname === '/';
-  const CategoryPage = location.pathname.startsWith('/quotes/') && !location.pathname.endsWith('/edit');;
+  const CategoryPage = location.pathname.startsWith('/quotes/') && !location.pathname.endsWith('/edit');
   const EditPage = location.pathname.startsWith('/quotes/') && location.pathname.endsWith('/edit');
-  const shouldDisplayFlex = HomePage || CategoryPage;
 
   return (
     <div>
