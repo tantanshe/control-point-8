@@ -63,7 +63,7 @@ const Home = () => {
   };
 
   return (
-    <div className="mt-2">
+    <div className="mt-3">
       {isLoading && (<Spinner/>)}
       {!isLoading && (
         <div>
@@ -76,8 +76,12 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">{quote.author}</h5>
                 <p className="card-text">{quote.text}</p>
-                <Link to={`/quotes/${quote.id}/edit`} className="btn btn-primary">Edit</Link>
-                <button onClick={() => deleteQuote(quote.id as string)} className="btn btn-danger">Delete</button>
+                <div className="d-flex justify-content-end">
+                  <Link to={`/quotes/${quote.id}/edit`} className="btn btn-dark ps-5 pe-5">Edit</Link>
+                  <button onClick={() => deleteQuote(quote.id as string)} className="btn btn-danger ms-3 ps-5 pe-5">
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           ))}

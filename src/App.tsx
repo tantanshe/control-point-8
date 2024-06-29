@@ -16,13 +16,15 @@ const App = () => {
       <NavBar/>
       <div className={HomePage || CategoryPage ? 'd-flex' : ''}>
         {(HomePage || (CategoryPage && !EditPage)) && <CategoriesList/>}
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/addQuote" element={<AddQuote/>}/>
-          <Route path="/quotes/:id" element={<Home/>}/>
-          <Route path="/quotes/:id/edit" element={<AddQuote/>}/>
-          <Route path="*" element={<h2>Not found</h2>}/>
-        </Routes>
+        <div className={HomePage || CategoryPage ? 'quote-div' : ''}>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/addQuote" element={<AddQuote/>}/>
+            <Route path="/quotes/:id" element={<Home/>}/>
+            <Route path="/quotes/:id/edit" element={<AddQuote/>}/>
+            <Route path="*" element={<h2>Not found</h2>}/>
+          </Routes>
+        </div>
       </div>
     </div>
   );

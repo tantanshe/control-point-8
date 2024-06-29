@@ -60,7 +60,7 @@ const AddQuote = () => {
   };
 
   return (
-    <div className="row mt-2">
+    <div className="row mt-3">
       <div className="col">
         <form onSubmit={onFormSubmit}>
           <h2>{id ? 'Edit the quote' : 'Add a new quote'}</h2>
@@ -103,7 +103,7 @@ const AddQuote = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary mt-3">
+          <button type="submit" className="btn btn-primary mt-3 ps-5 pe-5">
             {id ? 'Save changes' : 'Post'}
           </button>
         </form>
